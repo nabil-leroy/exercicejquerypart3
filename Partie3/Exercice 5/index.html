@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>exercice 5</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="div_deplace">
+    </div>
+    <input type="text" name="key" value="" id="key">
+    <script src="jquery-2.2.4.js"></script>
+    <script>
+      var marge = 0;
+      $('body').keypress(function(e){
+        var littleSquare = $('.div_deplace');
+        if (e.which == '100'){ // si la touche d est pressé
+          if (marge == 1280){// si la div est a la limite droit de l'ecran revenir a droite
+            littleSquare.css('margin-left', '0px');
+            marge = 0
+          }else {//sinon la deplacée de 10px vers la droite
+            marge +=10;
+            littleSquare.css('margin-left', marge + 'px')
+          }
+        }else if (e.which == '110'){// si la touche d est pressé
+          if (marge == 0){// si la div est a la limite gauche de l'ecran revenir a gauche
+            littleSquare.css('margin-left', '1280px');
+            marge = 1280;
+          }
+          else{//sinon la deplacée de 10px vers la gauche
+            marge -=10;
+            littleSquare.css('margin-left', marge + 'px');
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>exercice 4</title>
+    </head>
+  <body>
+    <div class="div_modifier">
+
+    </div>
+    <button type="button" name="button" id="height">hauteur</button>
+    <button type="button" name="button" id="green">vert</button>
+    <button type="button" name="button" id="restart">reinitialiser</button>
+    <button type="button" name="button" id="hide">cacher</button>
+    <button type="button" name="button" id="show">afficher</button>
+    <script src="jquery-2.2.4.js"></script>
+    <script type="text/javascript">
+      var height = 10;
+      var div = $('.div_modifier')
+      $('#height').click(function() {  //Function pour le boutton height
+        if (height == 100) {
+          height = 10;
+          div.css('height', '10px');
+        }else {
+          height += 10;
+          div.css('height', height + 'px');
+        }
+      });
+      $('#green').click(function(){  //Function pour le boutton vert
+        div.css('backgroundColor', 'green');
+      });
+      $('#restart').click(function() {  //Function pour le boutton restart
+      });
+        div.css('backgroundColor', 'white');
+      });
+      $('#hide').click(function() { //Function pour le boutton hide
+        div.hide();
+      });
+      $('#show').click(function() { //Function pour le boutton show
+        div.show();
+      });
+    </script>
+  </body>
+</html>

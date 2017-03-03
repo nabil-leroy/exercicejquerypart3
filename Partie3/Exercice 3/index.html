@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>exercice 3</title>
+  </head>
+  <body>
+    <label for="choixUtilisateur"></label><input type="text" name="choixUtilisateur" id="choixUtilisateur">
+    <button type="button" name="button" >validez</button>
+    <p>entrez un nombre entre 0 et 100</p>
+    <script src="jquery-2.2.4.js"></script>
+    <script type="text/javascript">
+      var nbTentive= 0;    // Variable du nombre de tentative
+      var nbATrouve = Math.floor(Math.random()*101);  // Variable du numéro aléatoire créer
+      $('button').click(function() {    //Ajout d'une fonction clique au boutton
+        nbTentive++;  // AJout 1 au nombre de tentative a chaque essaie
+        if(isNaN($("#choixUtilisateur").val()) === false){   // Sert a voir si le nombre indiqué par l'utilisateur est faux
+          if ($("#choixUtilisateur").val() == nbATrouve) {   //Sert a voir si le nombre indiqué par l'utilisateur est bon
+            $('p').text('correct en ' + nbTentive + ' tentative(s)');//Sert a indiqué à l'utilisateur en combien de tentative il a trouvé le bon nombres
+          }else if ($("#choixUtilisateur").val() > nbATrouve) {  
+            $('p').text('moins'); //Envoie à l'utilisateur que c'est moins
+          }else {                   // sinon
+            $('p').text('plus'); //Envoie à l'utilisateur que c'est plus
+          }
+        }else {
+          alert('entrez un nombre');
+        }
+      });
+    </script>
+  </body>
+</html>
